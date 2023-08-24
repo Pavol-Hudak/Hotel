@@ -37,11 +37,15 @@
     gap: 3rem;
     align-items: center;
     text-align: center;
+    
 }
-
+.navbar-left{
+    width: 40%;
+}
 
 .navbar-right{
     padding-right: 3rem;
+    
 }
 .nav-link{
     text-decoration: none;
