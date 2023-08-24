@@ -1,0 +1,48 @@
+:root {
+    --primary-color: #000000; /* Define a primary color variable */
+    --secondary-color: white; /* Define a secondary color variable */
+  }
+
+* {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.searchContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.search-persons{
+    display: flex;
+    flex-direction:column;
+    row-gap: 1rem;
+    width: 10%;
+}
+
+input{
+    text-align: center;
+}
+
+.date-input{
+    height: fit-content;
+    font-size: large;
+}
+
+.person-input{
+    height: 25px;
+    border-radius: 50px;
+    border: 2px solid var(--primary-color)
+}
