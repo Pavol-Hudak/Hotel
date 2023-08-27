@@ -4,6 +4,7 @@
   }
 
 * {
+    position: sticky;
     margin: 0;
     font-family: "Roboto", sans-serif;
     padding: 0;
@@ -11,38 +12,71 @@
 }
 
 .searchContainer{
+
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 2rem;
+    border-bottom: 1px solid var(--primary-color)
+}
+h3{
+    font-size: small;
 }
 
 form{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
+    
     align-items: center;
+    padding: 1rem 5rem;
+    
 }
-
-.search-persons{
+.form-div{
     display: flex;
-    flex-direction:column;
-    row-gap: 1rem;
-    width: 10%;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 1rem;
 }
 
 input{
-    text-align: center;
+    text-align: left;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
 .date-input{
-    height: fit-content;
-    font-size: large;
+    height: 3rem;
+    font-size: larger;
+    padding-left: 1rem;
+    margin: 10px;
 }
 
-.person-input{
-    height: 25px;
-    border-radius: 50px;
-    border: 2px solid var(--primary-color)
+
+.select-persons{
+    display: flex;
+    flex-direction:row;
+    row-gap: 1rem;
+    width: 10%;
+    padding-left: 1rem;
+    margin-left: 1rem;
 }
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 1rem;
+}
+

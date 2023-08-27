@@ -4,8 +4,13 @@ const Home: React.FC = () => {
   return (
     <div className='mainContainer'>
       <Navbar/>
-      <Search/>
-
+      <div style={{ position: 'sticky', top: '0', backgroundColor: 'white'}}>
+        <Search/>
+      </div>
+      
+      <h1>a</h1>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <h1>a</h1>
 
     </div>
   );
