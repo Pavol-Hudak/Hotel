@@ -10,6 +10,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options }) => {
 
     const toggleDropdown = () =>{
         setIsOpen(!isOpen);
+        console.log("open");
     };
     const handleOptionSelect = (option: string) => {
         setCurrentOption(option);

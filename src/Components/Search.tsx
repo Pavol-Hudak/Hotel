@@ -57,7 +57,6 @@ const Search: React.FC = () => {
     return(
         <div className='searchContainer'>
             <form id='search-room'>
-                <div className='form-div'>
                     <input name='checkIn-input' className='date-input' type='text' placeholder="Check-in" value={formattedCheckInDate} onChange={handleChange}></input>
                     <input name='checkOut-input' className='date-input' type='text' placeholder="Check-out" value={formattedCheckOutDate} onChange={handleChange}></input>
                     <div className='select-persons'>
@@ -68,9 +67,9 @@ const Search: React.FC = () => {
                                 <h3>Senior</h3>                         
                             </div>
                             <div className='column'>
-                                <button>-</button>
-                                <button>-</button>
-                                <button>-</button>                        
+                                <input type='button' value={"-"}></input>                       
+                                <input type='button' value={"-"}></input>                       
+                                <input type='button' value={"-"}></input>                       
                             </div>
                             <div className='column'>
                                 <h3>1</h3>
@@ -78,14 +77,16 @@ const Search: React.FC = () => {
                                 <h3>1</h3>                 
                             </div>
                             <div className='column'>
-                                <button>+</button>
-                                <button>+</button>
-                                <button>+</button>                 
+                                <input type='button' value={"+"}></input>
+                                <input type='button' value={"+"}></input>
+                                <input type='button' value={"+"}></input>             
+                            </div>
+                            <div className='column'>
+                                <input type='submit' className='find-button' value={"Find a room"}/>                
                             </div>
                         </div>
                     </div>
-                </div>
-                <button type='submit'>Find a room</button>
+                
             </form>
         </div>
     )

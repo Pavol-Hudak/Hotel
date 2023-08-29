@@ -1,7 +1,4 @@
-:root {
-    --primary-color: #000000; /* Define a primary color variable */
-    --secondary-color: white; /* Define a secondary color variable */
-  }
+
 
 * {
     position: sticky;
@@ -12,12 +9,12 @@
 }
 
 .searchContainer{
-
+    background-color: var(--primary-color);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid var(--primary-color)
+    border-bottom: 1px solid var(--secondary-color);
 }
 h3{
     font-size: small;
@@ -25,19 +22,14 @@ h3{
 
 form{
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content:left;
     
     align-items: center;
     padding: 1rem 5rem;
     
 }
-.form-div{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-bottom: 1rem;
-}
+
 
 input{
     text-align: left;
@@ -80,3 +72,9 @@ input[type="number"]::-webkit-outer-spin-button {
     gap: 1rem;
 }
 
+.find-button{
+    width: 10rem;
+    height: 3rem;
+    margin-left: 5rem;
+    text-align: center;
+}
