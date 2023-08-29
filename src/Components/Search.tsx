@@ -67,9 +67,9 @@ const Search: React.FC = () => {
                                 <h3>Senior</h3>                         
                             </div>
                             <div className='column'>
-                                <input type='button' value={"-"}></input>                       
-                                <input type='button' value={"-"}></input>                       
-                                <input type='button' value={"-"}></input>                       
+                                <input className="minus-button" type='button' value={"-"}></input>                       
+                                <input className="minus-button" type='button' value={"-"}></input>                       
+                                <input className="minus-button" type='button' value={"-"}></input>                       
                             </div>
                             <div className='column'>
                                 <h3>1</h3>
@@ -77,9 +77,9 @@ const Search: React.FC = () => {
                                 <h3>1</h3>                 
                             </div>
                             <div className='column'>
-                                <input type='button' value={"+"}></input>
-                                <input type='button' value={"+"}></input>
-                                <input type='button' value={"+"}></input>             
+                                <input className="plus-button" type='button' value={"+"}></input>
+                                <input className="plus-button" type='button' value={"+"}></input>
+                                <input className="plus-button" type='button' value={"+"}></input>             
                             </div>
                             <div className='column'>
                                 <input type='submit' className='find-button' value={"Find a room"}/>                

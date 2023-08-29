@@ -17,7 +17,8 @@
     border-bottom: 1px solid var(--secondary-color);
 }
 h3{
-    font-size: small;
+    font-size: 16px;
+    font-weight: 200;
 }
 
 form{
@@ -41,6 +42,22 @@ input[type="number"]::-webkit-outer-spin-button {
   appearance: none;
   margin: 0;
 }
+.minus-button, .plus-button {
+	background-color:var(--primary-color);
+	border-radius:23px;
+	border:1px solid var(--secondary-color);
+	display:flex;
+    justify-content: center;
+	cursor:pointer;
+	color:var(--secondary-color);
+	font-family:Arial;
+	width: 25px;
+    height: 25px;
+    padding: 5px 10px ;
+	text-decoration:none;
+}
+
+
 .date-input{
     height: 3rem;
     font-size: larger;
@@ -68,8 +85,10 @@ input[type="number"]::-webkit-outer-spin-button {
 .column{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: left;
-    gap: 1rem;
+    row-gap: 1rem;
+    
 }
 
 .find-button{

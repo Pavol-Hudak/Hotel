@@ -35,11 +35,11 @@ a{
     align-items: center;
 }
 
-a:first-child{
+.location-first:first-child{
     margin-right: -10rem;
 }
 
-a:last-child{
+.location-last:last-child{
     margin-left: -10rem;
 }
 
@@ -47,3 +47,5 @@ a img{
     max-width: 50%;
 
 }
+
+
