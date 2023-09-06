@@ -17,9 +17,9 @@ const Dropdown: React.FC<DropdownProps> = ({ options }) => {
         setIsOpen(false)
     };
     return(
-        <div className='dropdown'>
+        <div className='dropdown' >
             <button className='dropdown-button' onClick={toggleDropdown}>{currentOption || 'English'}</button>
-        {isOpen && (
+        {isOpen && (       
             <ul className='dropdown-options'>{
                 options.map((option) => (
                     <li className='dropdown-choice' key={option} onClick={() => handleOptionSelect(option)}>{option}</li>

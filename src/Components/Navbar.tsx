@@ -2,6 +2,9 @@ import React from 'react';
 import '../CSS/navbar.css'
 import {NavLink} from 'react-router-dom'
 import Dropdown from './Dropdown'
+import SignIn from './SignIn';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 const Navbar: React.FC = () => {
   const languages = ['English', 'Slovak', "Korean"];
     return (
@@ -16,11 +19,11 @@ const Navbar: React.FC = () => {
           </div>
           <div className='navbar-right'>
               <Dropdown options={languages}/>
-              <NavLink to='/login' className={'nav-link login'}>Login</NavLink>
+              <NavLink to='/signin' className={'nav-link login'}>Sign-in</NavLink>
           </div>
         </div>
       </div>
-    );
+    );  
   }
   
   export default Navbar;

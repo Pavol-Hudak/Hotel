@@ -1,0 +1,50 @@
+:root {
+    --primary-color:rgb(219, 219, 219); /* Define a primary color variable */
+    --secondary-color: black; /* Define a secondary color variable */
+    --tertiary-color: white;
+  }
+
+* {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+}
+
+.register-container{
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem 2rem 2rem;
+    border: 1px solid black;
+    text-align: center;
+    width: 30%;
+    margin-top: 3rem;
+}
+
+.register-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-form label{
+    padding-top: 1.5rem;
+}
+
+.register-form button{
+    margin-top: 1rem;
+    padding: 10px 12px;
+    background-color: var(--tertiary-color);
+    border-radius: 30px;
+    border: 2px solid black;
+    width: 100%
+}

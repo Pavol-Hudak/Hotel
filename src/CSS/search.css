@@ -15,6 +15,7 @@
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid var(--secondary-color);
+    z-index: 1;
 }
 h3{
     font-size: 16px;
@@ -24,37 +25,26 @@ h3{
 form{
     display: flex;
     flex-direction: row;
-    justify-content:left;
-    
     align-items: center;
-    padding: 1rem 5rem;
-    
+    width: 50%;
+    padding: 1rem 0;
 }
 
 
 input{
     text-align: left;
 }
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
-}
 .minus-button, .plus-button {
-	background-color:var(--primary-color);
-	border-radius:23px;
-	border:1px solid var(--secondary-color);
-	display:flex;
+	background-color: var(--primary-color);
+	border-radius: 23px;
+	border: 1px solid var(--secondary-color);
+	display: flex;
     justify-content: center;
-	cursor:pointer;
-	color:var(--secondary-color);
-	font-family:Arial;
+	cursor: pointer;
+	color: var(--secondary-color);
 	width: 25px;
     height: 25px;
-    padding: 5px 10px ;
-	text-decoration:none;
+	text-decoration: none;
 }
 
 
@@ -69,6 +59,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .select-persons{
     display: flex;
     flex-direction:row;
+    align-items: center;
     row-gap: 1rem;
     width: 10%;
     padding-left: 1rem;
@@ -76,18 +67,17 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .row{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
     align-items: center;
     gap: 1rem;
 }
 
 .column{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
     align-items: left;
-    row-gap: 1rem;
+    row-gap: 0rem;
     
 }
 
