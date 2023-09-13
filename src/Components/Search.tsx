@@ -7,6 +7,8 @@ const Search: React.FC = () => {
     const [formattedCheckInDate, setFormattedCheckInDate] = useState<string>('');
     const [formattedCheckOutDate, setFormattedCheckOutDate] = useState<string>('');
 
+    
+
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const name = e.target.name;
     const input = e.target.value;

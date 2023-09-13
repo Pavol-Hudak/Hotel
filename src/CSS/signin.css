@@ -11,17 +11,24 @@
     box-sizing: border-box;
 }
 
-.main-container{
+html{
+    background-color: var(--primary-color);
+}
+
+
+.signin-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 .register-container{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 0 2rem 2rem 2rem;
     border: 1px solid black;
     text-align: center;
@@ -46,5 +53,18 @@
     background-color: var(--tertiary-color);
     border-radius: 30px;
     border: 2px solid black;
-    width: 100%
+    width: 100%;
+    cursor: pointer;
+}
+
+.switchButton{
+    background-color: var(--primary-color);
+    border: 0;
+    cursor:pointer;
+}
+
+.reg-input{
+    height:2rem;
+    width: 15rem;
+    text-align: center;
 }

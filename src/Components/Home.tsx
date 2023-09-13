@@ -1,6 +1,5 @@
 import Navbar from "./Navbar";
 import Search from "./Search";
-import Register from "./Register";
 import '../CSS/home.css'
 const Home: React.FC = () => {
   const locations_dict = {
@@ -10,7 +9,7 @@ const Home: React.FC = () => {
     'Busan': 'Jozkossrko'
   };
   return (
-    <div className='mainContainer'>
+    <div className='main-container'>
       <Navbar/>
       <div style={{ position: 'sticky', top: '0', backgroundColor: 'white', zIndex:'1'}}>
         <Search/>

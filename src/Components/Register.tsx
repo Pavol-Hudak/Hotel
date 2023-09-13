@@ -1,21 +1,27 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import '../CSS/signin.css'
 
-function Register() {
+interface registerProps{
+    switchLogin:() => void;
+}
+
+
+function Register({switchLogin}: registerProps) {
     const [guestData, setGuestData] = useState({
         first_name: '',
         middle_name: '',
         last_name: '',
         date_of_birth: '',
         email: '',
+        password: '',
     })
 
-    const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
+    const handleGuestChange = (e:ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setGuestData({ ...guestData, [name]: value });
     };
     
-    const submitChange =async (e:FormEvent<HTMLFormElement>) => {
+    const submitChange = async(e:FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try{
             const response = await fetch('api/register-guest',{
@@ -29,7 +35,12 @@ function Register() {
                 console.log(response)
                 window.location.reload();
             }
-            else console.log("Doesnt work")
+            else {
+                const errorMessage = await response.text();
+                console.log(errorMessage)
+                console.log(JSON.stringify(guestData))
+                console.log("Doesnt work")
+            }
         }
         catch(error){
             console.log("error")
@@ -39,50 +50,57 @@ function Register() {
 
 
     return (
-        <div className='register-container'>
-            <form id='register-form' onSubmit={submitChange} className='register-form'>
-                <label>First name</label>
-                <input
-                    type="text"
-                    name="first_name"
-                    value={guestData.first_name}
-                    onChange={handleChange}
-                />
-                <label>Middle name</label>
-                <input
-                    type="text"
-                    name="middle_name"
-                    value={guestData.middle_name}
-                    onChange={handleChange}
-                />
-                <label>Last name</label>
-                <input
-                    type="text"
-                    name="last_name"
-                    value={guestData.last_name}
-                    onChange={handleChange}
-                />
-                <label>Date of birth</label>
-                <input
-                    type="date"
-                    name="date_of_birth"
-                    value={guestData.date_of_birth}
-                    onChange={handleChange}
-                />
-                <label>Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    value={guestData.email}
-                    onChange={handleChange}
-                />
-                <button type="submit">Submit</button>
-            </form>
+            <div className='register-container'>
+                <form id='register-form' onSubmit={submitChange} className='register-form'>
+                    <label>First name</label>
+                    <input className='reg-input'
+                        type="text"
+                        name="first_name"
+                        value={guestData.first_name}
+                        onChange={handleGuestChange}
+                    />
+                    <label>Middle name</label>
+                    <input className='reg-input'
+                        type="text"
+                        name="middle_name"
+                        value={guestData.middle_name}
+                        onChange={handleGuestChange}
+                    />
+                    <label>Last name</label>
+                    <input className='reg-input'
+                        type="text"
+                        name="last_name"
+                        value={guestData.last_name}
+                        onChange={handleGuestChange}
+                    />
+                    <label>Date of birth</label>
+                    <input className='reg-input'
+                        type="date"
+                        name="date_of_birth"
+                        value={guestData.date_of_birth}
+                        onChange={(e) => {
+                            handleGuestChange(e); 
+                          }}
+                    />
+                    <label>Email</label>
+                    <input className='reg-input'
+                        type="email"
+                        name="email"
+                        value={guestData.email}
+                        onChange={handleGuestChange}
+                    />
+                    <label>Password</label>
+                    <input  className='reg-input'
+                        type="password"
+                        name="password"
+                        value={guestData.password}
+                        onChange={handleGuestChange}  
+                    />
+                    <button type="submit">Submit</button>
+                </form>               
+            <input className='switchButton' type='button' value={"Already a member? Sign in"} onClick={switchLogin}></input>
         </div>
     );
-
-
   }
-  
   export default Register;
   

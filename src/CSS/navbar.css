@@ -17,6 +17,7 @@
     padding-left: 3rem;
     padding-top: 1rem;
     padding-right: 3rem;
+    cursor: pointer;
 }
 
 .navbar{
@@ -78,6 +79,7 @@
     border-bottom: 2px solid var(--primary-color);
     font-size: medium;
     z-index: 2;
+    cursor: pointer;
 }
 .dropdown-button:hover{
     border-bottom: 2px solid var(--secondary-color);
