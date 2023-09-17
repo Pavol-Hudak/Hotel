@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import '../CSS/navbar.css'
 interface DropdownProps {
-  options: string[]; // Array of options
+    defValue: string;
+    options: string[]; // Array of options
+    onChange: (value: string) => void;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ options }) => {
+const Dropdown: React.FC<DropdownProps> = ({ defValue, options, onChange }) => {
     const [currentOption, setCurrentOption] = useState<string | null>(null);
     const [isOpen, setIsOpen] = useState(false)
 
@@ -14,11 +16,12 @@ const Dropdown: React.FC<DropdownProps> = ({ options }) => {
     };
     const handleOptionSelect = (option: string) => {
         setCurrentOption(option);
-        setIsOpen(false)
+        setIsOpen(false);
+        onChange(option);
     };
     return(
         <div className='dropdown' >
-            <button className='dropdown-button' onClick={toggleDropdown}>{currentOption || 'English'}</button>
+            <button className='dropdown-button' onClick={toggleDropdown}>{currentOption || defValue}</button>
         {isOpen && (       
             <ul className='dropdown-options'>{
                 options.map((option) => (

@@ -1,7 +1,27 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useEffect} from 'react';
 import '../CSS/search.css'
 
+interface Counts {
+    adult: number;
+    child: number;
+    senior: number;
+}
+
 const Search: React.FC = () => {
+    const getSessionStorageCounts = () => {
+        const storedCounts = sessionStorage.getItem('counts');
+        if (storedCounts) {
+            return JSON.parse(storedCounts) as Counts;
+        }
+        return {
+            adult: 0,
+            child: 0,
+            senior: 0,
+        };
+    };
+
+    const [counts, setCounts] = useState<Counts>(getSessionStorageCounts());
+
     const [rawCheckInDate, setRawCheckInDate] = useState<string>('');
     const [rawCheckOutDate, setRawCheckOutDate] = useState<string>('');
     const [formattedCheckInDate, setFormattedCheckInDate] = useState<string>('');
@@ -56,6 +76,17 @@ const Search: React.FC = () => {
         };
     }
 
+    const changeNumber = (e: React.MouseEvent<HTMLInputElement, MouseEvent>, key: keyof typeof counts, change: number) => {
+        setCounts((prevState) => ({
+            ...prevState,
+            [key]: Math.max(prevState[key] + change, 0),
+        }));
+    }
+
+    useEffect(() => {
+        sessionStorage.setItem('counts', JSON.stringify(counts));
+    }, [counts]);
+
     return(
         <div className='searchContainer' style={{zIndex:1}}>
             <form id='search-room'>
@@ -64,19 +95,19 @@ const Search: React.FC = () => {
                     <div className='select-persons'>
                         <div className='row'>                           
                             <h3>Adult</h3>
-                            <input className="minus-button" type='button' value={"-"}></input>  
-                            <h3>1</h3>
-                            <input className="plus-button" type='button' value={"+"}></input>
+                            <input className="minus-button" type='button' value={"-"} onClick={e => changeNumber(e,'adult',-1)}></input>  
+                            <span>{counts.adult}</span>
+                            <input className="plus-button" type='button' value={"+"} onClick={e => changeNumber(e,'adult',1)}></input>
 
                             <h3>Children</h3>
-                            <input className="minus-button" type='button' value={"-"}></input>    
-                            <h3>1</h3>    
-                            <input className="plus-button" type='button' value={"+"}></input>
+                            <input className="minus-button" type='button' value={"-"} onClick={e => changeNumber(e,'child',-1)}></input>    
+                            <span>{counts.child}</span>   
+                            <input className="plus-button" type='button' value={"+"} onClick={e => changeNumber(e,'child',1)}></input>
                             
                             <h3>Senior</h3>                                     
-                            <input className="minus-button" type='button' value={"-"}></input>                       
-                            <h3>1</h3>   
-                            <input className="plus-button" type='button' value={"+"}></input>                                    
+                            <input className="minus-button" type='button' value={"-"} onClick={e => changeNumber(e,'senior',-1)}></input>                       
+                            <span>{counts.senior}</span>  
+                            <input className="plus-button" type='button' value={"+"} onClick={e => changeNumber(e,'senior',1)}></input>                                    
                         </div>
                         <input type='submit' className='find-button' value={"Find a room"}/>
                     </div>
